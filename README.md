@@ -1,48 +1,48 @@
 # Nagendra_Point_Cloud_correction
 
 1) Registration of point cloud with transformations from estimateAffine3D() follwed by ICP registration.
-	 a) Read airplane.ply file
-	 b) Sample the point cloud
-	 c) Apply pre-defined Transformation to the Sampled point cloud
-	 d) Estimate Transformation Pose from Transformed Point Cloud to Sampled point cloud using estimateAffine3D()
-	 e) Apply Inverse of Affine Transformation matrix to Transformed Matric
-	 f) This helps in overlap of Point Clouds
-	 g) Estimate Tranformation matrix from Affine transformed PC to Sampled PC using OpenCV's ppf_match_3d::ICP::registerModelToScene()
-	 h) Estimate Tranformation matrix from Affine transformed PC to Sampled PC using libpointmatcher's icp()
-	 i) Visualize
-			- Sampled PC
-			- Inverse Affine Transformed PC
-			- Inverse OpenCV's ICP Transformed PC
-			- Inverse libpointmatcher's ICP TRansformed PC
+		 a) Read airplane.ply file
+		 b) Sample the point cloud
+		 c) Apply pre-defined Transformation to the Sampled point cloud
+		 d) Estimate Transformation Pose from Transformed Point Cloud to Sampled point cloud using estimateAffine3D()
+		 e) Apply Inverse of Affine Transformation matrix to Transformed Matric
+		 f) This helps in overlap of Point Clouds
+		 g) Estimate Tranformation matrix from Affine transformed PC to Sampled PC using OpenCV's ppf_match_3d::ICP::registerModelToScene()
+		 h) Estimate Tranformation matrix from Affine transformed PC to Sampled PC using libpointmatcher's icp()
+		 i) Visualize
+				- Sampled PC
+				- Inverse Affine Transformed PC
+				- Inverse OpenCV's ICP Transformed PC
+				- Inverse libpointmatcher's ICP TRansformed PC
 2) ICP iterations for checking threshold of transformation.
-	 a) Computes all possible Pose matrices for a range of rotations and translations
-	 b) Transform the PC
-	 c) Estimate transformation pose matrix from OpenCV's ppf_match_3d::ICP::registerModelToScene()
-	 d) Compare (with some threshold), the Input Pose and the Pose that is estimated OpenCV's ppf_match_3d::ICP::registerModelToScene().
+		 a) Computes all possible Pose matrices for a range of rotations and translations
+		 b) Transform the PC
+		 c) Estimate transformation pose matrix from OpenCV's ppf_match_3d::ICP::registerModelToScene()
+		 d) Compare (with some threshold), the Input Pose and the Pose that is estimated OpenCV's ppf_match_3d::ICP::registerModelToScene().
 
 YAML files: 
-	- icp_tutorial_cfg.yaml - Used to config libpointmatcher
+		- icp_tutorial_cfg.yaml - Used to config libpointmatcher
 
 PLY files:
-	- airplane.ply
+		- airplane.ply
 
 CSV files:
-	- file.csv - Sampled PC
-	- filetwo.csv - Inverse Affine Transformed PC
-	- filethree.csv - Inverse OpenCV's ICP Transformed PC
-	- nPoints1.csv - n points from Sampled PC
-	- nPoints3.csv - n points from Inverse Affine Transformed PC
-	- Threshold_File.csv - It contains the transformation values [Euler angles and Translations] of the Input Pose, if the Input Pose and the Pose that is estimated with ICP algorithm is above any given Threshold
-	- car_cloud400.csv and car_cloud401.csv - Points used for testing
+		- file.csv - Sampled PC
+		- filetwo.csv - Inverse Affine Transformed PC
+		- filethree.csv - Inverse OpenCV's ICP Transformed PC
+		- nPoints1.csv - n points from Sampled PC
+		- nPoints3.csv - n points from Inverse Affine Transformed PC
+		- Threshold_File.csv - It contains the transformation values [Euler angles and Translations] of the Input Pose, if the Input Pose and the Pose that is estimated with ICP algorithm is above any given Threshold
+		- car_cloud400.csv and car_cloud401.csv - Points used for testing
 
 VTK files: (Used to visualize in ParaView application)
-	- 1sampled.vtk - Sampled PC
-	- 2afine_transformed.vtk - Inverse Affine Transformed PC
-	- 3icp_opencv.vtk - Inverse OpenCV's ICP Transformed PC
-	- 4icp_lib.vtk - Inverse libpointmatcher's ICP TRansformed PC
+		- 1sampled.vtk - Sampled PC
+		- 2afine_transformed.vtk - Inverse Affine Transformed PC
+		- 3icp_opencv.vtk - Inverse OpenCV's ICP Transformed PC
+		- 4icp_lib.vtk - Inverse libpointmatcher's ICP TRansformed PC
 
 Python files: 
-	The Python program uses the three CSV files to visualize the Point Clouds using the library "pptk"
+		The Python program uses the three CSV files to visualize the Point Clouds using the library "pptk"
 
 C++ files:
 
