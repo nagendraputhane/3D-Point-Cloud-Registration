@@ -23,10 +23,10 @@
 * Compare (with some threshold), the Input Pose and the Pose that is estimated OpenCV's ppf_match_3d::ICP::registerModelToScene().
 
 ## YAML files: 
-		- icp_tutorial_cfg.yaml - Used to config libpointmatcher
+* icp_tutorial_cfg.yaml - Used to config libpointmatcher
 
 ## PLY files:
-		- airplane.ply
+* airplane.ply
 
 ## CSV files:
 * file.csv - Sampled PC
